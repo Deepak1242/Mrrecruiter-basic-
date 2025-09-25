@@ -14,13 +14,14 @@ app.use(cookieParser());
 dotenv.config();
 
 app.use(cors({
-    
-    origin:"http://localhost:5173",
+    origin: [
+        "http://localhost:5173", 
+        "https://mrinterviewer.netlify.app"
+    ],
     credentials:true,
     exposedHeaders:["set-cookie"],
     methods:["GET","POST","PUT","DELETE"],
     allowedHeaders:["Content-Type","Authorization"]
-
 }));
 
 app.use(express.json());
